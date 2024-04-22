@@ -2,7 +2,7 @@
 
 ## Content of this Github
 
-**1. Transcriptomic metrics** Contains the metrics of the transcriptome assemblies, the general pipeline followed in this study and the intermediate files. 
+**1. Transcriptomic (metrics & results)** Contains the metrics of the transcriptome assemblies, the general pipeline followed in this study and the intermediate files. 
 
 **2. Toxins predictions** Outputs with the different predictions for Obama nungara (ONUN) and Schmidtea mediterranea (SMED). It includes the predictions provided by the two softwares applied (ToxinPred2 and Toxify), a list with the common toxins, the output of SignalP and the final list of secreted toxins. 
 
