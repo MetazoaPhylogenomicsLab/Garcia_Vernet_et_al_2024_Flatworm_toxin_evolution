@@ -2,9 +2,9 @@
 
 ## Content of this Github
 
-**1. Transcriptomic metrics** Supplementary information 1, containing the metrics of the transcriptome assemblies and intermediate files. It also contains the functional annotations produced with Fantasia. 
+**1. Transcriptomic metrics** Contains the metrics of the transcriptome assemblies and intermediate files. It also contains the functional annotations produced with Fantasia. 
 
-**2. Toxins predictions** Supplementary information 2. Outputs with the different predictions for Obama nungara (ONUN) and Schmidtea mediterranea (SMED). It includes the predictions provided by the two softwares applied (ToxinPred2 and Toxify), a list with the common toxins, the output of SignalP and the final list of secreted toxins. 
+**2. Toxins predictions** Outputs with the different predictions for Obama nungara (ONUN) and Schmidtea mediterranea (SMED). It includes the predictions provided by the two softwares applied (ToxinPred2 and Toxify), a list with the common toxins, the output of SignalP and the final list of secreted toxins. 
 
 **3. Proteomic outputs and metric**
 
