@@ -1,0 +1,27 @@
+ONUN2_rklon_prott5_embeddings:
+  sequences_file: ONUN2_rklon_prott5/sequences_file.fasta
+  prefix: ONUN2_rklon_prott5
+  simple_remapping: false
+  mapping_file: ONUN2_rklon_prott5/mapping_file.csv
+  remapped_sequences_file: ONUN2_rklon_prott5/remapped_sequences_file.fasta
+  type: embed
+  protocol: prottrans_t5_xl_u50
+  model_directory: /lustre/home/ibe/bio/Metazomics/GOPredSim//models/prottrans_t5_xl_u50
+  half_precision_model: true
+  device: cuda
+  reduce: true
+  discard_per_amino_acid_embeddings: true
+  stage_name: ONUN2_rklon_prott5_embeddings
+  start_time: '2023-10-17 14:35:18.083259+02:00'
+  max_amino_acids: 5000
+  embeddings_transformer_function:
+  reduced_embeddings_file: ONUN2_rklon_prott5/ONUN2_rklon_prott5_embeddings/reduced_embeddings_file.h5
+  end_time: '2023-10-17 14:48:30.647471+02:00'
+  elapsed_time: 0:13:12.564212
+global:
+  sequences_file: ONUN2_rklon_prott5/sequences_file.fasta
+  prefix: ONUN2_rklon_prott5
+  simple_remapping: false
+  mapping_file: ONUN2_rklon_prott5/mapping_file.csv
+  remapped_sequences_file: ONUN2_rklon_prott5/remapped_sequences_file.fasta
+  version: 0.2.2

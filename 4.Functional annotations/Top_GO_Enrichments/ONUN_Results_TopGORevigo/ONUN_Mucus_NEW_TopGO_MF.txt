@@ -1,0 +1,10 @@
+"GO.ID"	"Term"	"Annotated"	"Significant"	"Expected"	"p.value"
+"GO:0005044"	"scavenger receptor activity"	20	7	0.43	1.1e-07
+"GO:0030246"	"carbohydrate binding"	138	11	2.97	0.00016
+"GO:0004252"	"serine-type endopeptidase activity"	48	6	1.03	0.00051
+"GO:0004725"	"protein tyrosine phosphatase activity"	23	4	0.5	0.00131
+"GO:0005178"	"integrin binding"	24	4	0.52	0.00155
+"GO:0005125"	"cytokine activity"	69	6	1.49	0.00345
+"GO:0061791"	"GTPase motor activity"	5	2	0.11	0.00441
+"GO:0061134"	"peptidase regulator activity"	58	5	1.25	0.00781
+"GO:0098632"	"cell-cell adhesion mediator activity"	21	3	0.45	0.00975

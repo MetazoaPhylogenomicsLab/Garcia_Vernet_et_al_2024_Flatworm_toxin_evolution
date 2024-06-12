@@ -1,0 +1,11 @@
+global:
+  sequences_file: /lustre/home/ibe/lbenitez/PLATY/Annotation_goPredsim_new16oct23/PEP_files/SMED3_rklon_cdhit100_5k_removed.pep
+  prefix: SMED3_rklon_prott5
+SMED3_rklon_prott5_embeddings:
+  type: embed
+  protocol: prottrans_t5_xl_u50
+  model_directory: /lustre/home/ibe/bio/Metazomics/GOPredSim//models/prottrans_t5_xl_u50
+  half_precision_model: true
+  device: cuda
+  reduce: true
+  discard_per_amino_acid_embeddings: true

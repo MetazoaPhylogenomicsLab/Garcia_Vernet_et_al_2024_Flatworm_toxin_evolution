@@ -1,0 +1,27 @@
+SMED3_rklon_prott5_embeddings:
+  sequences_file: SMED3_rklon_prott5/sequences_file.fasta
+  prefix: SMED3_rklon_prott5
+  simple_remapping: false
+  mapping_file: SMED3_rklon_prott5/mapping_file.csv
+  remapped_sequences_file: SMED3_rklon_prott5/remapped_sequences_file.fasta
+  type: embed
+  protocol: prottrans_t5_xl_u50
+  model_directory: /lustre/home/ibe/bio/Metazomics/GOPredSim//models/prottrans_t5_xl_u50
+  half_precision_model: true
+  device: cuda
+  reduce: true
+  discard_per_amino_acid_embeddings: true
+  stage_name: SMED3_rklon_prott5_embeddings
+  start_time: '2023-10-17 16:34:13.178291+02:00'
+  max_amino_acids: 5000
+  embeddings_transformer_function:
+  reduced_embeddings_file: SMED3_rklon_prott5/SMED3_rklon_prott5_embeddings/reduced_embeddings_file.h5
+  end_time: '2023-10-17 16:47:33.200445+02:00'
+  elapsed_time: 0:13:20.022154
+global:
+  sequences_file: SMED3_rklon_prott5/sequences_file.fasta
+  prefix: SMED3_rklon_prott5
+  simple_remapping: false
+  mapping_file: SMED3_rklon_prott5/mapping_file.csv
+  remapped_sequences_file: SMED3_rklon_prott5/remapped_sequences_file.fasta
+  version: 0.2.2

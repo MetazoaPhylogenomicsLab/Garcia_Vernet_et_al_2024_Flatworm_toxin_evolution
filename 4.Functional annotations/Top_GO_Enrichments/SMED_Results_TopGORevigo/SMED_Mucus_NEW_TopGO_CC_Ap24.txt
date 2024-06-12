@@ -1,0 +1,10 @@
+"GO.ID"	"Term"	"Annotated"	"Significant"	"Expected"	"p.value"
+"GO:0032982"	"myosin filament"	10	4	0.29	0.00012
+"GO:0005576"	"extracellular region"	412	23	11.9	0.00111
+"GO:0016459"	"myosin complex"	22	4	0.64	0.00321
+"GO:0031528"	"microvillus membrane"	4	2	0.12	0.00477
+"GO:0097482"	"muscle cell postsynaptic specialization"	4	2	0.12	0.00477
+"GO:0036062"	"presynaptic periactive zone"	4	2	0.12	0.00477
+"GO:0045177"	"apical part of cell"	57	8	1.65	0.00484
+"GO:0016324"	"apical plasma membrane"	44	5	1.27	0.00807
+"GO:0005604"	"basement membrane"	16	3	0.46	0.00996

@@ -1,0 +1,28 @@
+"GO.ID"	"Term"	"Annotated"	"Significant"	"Expected"	"p.value"
+"GO:1905941"	"positive regulation of gonad development"	13	5	0.28	4.8e-06
+"GO:0031648"	"protein destabilization"	14	5	0.3	7.3e-06
+"GO:1903746"	"positive regulation of pharyngeal pumpin..."	14	5	0.3	7.3e-06
+"GO:0051894"	"positive regulation of focal adhesion as..."	3	3	0.06	9.8e-06
+"GO:0048008"	"platelet-derived growth factor receptor ..."	3	3	0.06	9.8e-06
+"GO:0050860"	"negative regulation of T cell receptor s..."	4	3	0.09	3.9e-05
+"GO:0051898"	"negative regulation of protein kinase B ..."	6	3	0.13	0.00019
+"GO:0007157"	"heterophilic cell-cell adhesion via plas..."	6	3	0.13	0.00019
+"GO:0043407"	"negative regulation of MAP kinase activi..."	6	3	0.13	0.00019
+"GO:0031103"	"axon regeneration"	44	6	0.95	0.00032
+"GO:0033627"	"cell adhesion mediated by integrin"	8	3	0.17	0.00051
+"GO:0042059"	"negative regulation of epidermal growth ..."	11	3	0.24	0.00143
+"GO:0006897"	"endocytosis"	181	11	3.91	0.00165
+"GO:0007160"	"cell-matrix adhesion"	16	6	0.35	0.0022
+"GO:0001555"	"oocyte growth"	4	2	0.09	0.0027
+"GO:0043410"	"positive regulation of MAPK cascade"	47	5	1.02	0.00319
+"GO:0002252"	"immune effector process"	116	8	2.51	0.00335
+"GO:0039663"	"membrane fusion involved in viral entry ..."	15	3	0.32	0.0037
+"GO:0019058"	"viral life cycle"	72	6	1.56	0.00434
+"GO:0039553"	"suppression by virus of host chemokine a..."	5	2	0.11	0.00444
+"GO:0043277"	"apoptotic cell clearance"	32	4	0.69	0.00465
+"GO:0032507"	"maintenance of protein location in cell"	18	3	0.39	0.00633
+"GO:0006955"	"immune response"	258	15	5.58	0.0064
+"GO:0072344"	"rescue of stalled ribosome"	6	2	0.13	0.00656
+"GO:0098542"	"defense response to other organism"	279	13	6.03	0.00658
+"GO:0044409"	"entry into host"	36	4	0.78	0.00713
+"GO:0007155"	"cell adhesion"	223	16	4.82	0.0079

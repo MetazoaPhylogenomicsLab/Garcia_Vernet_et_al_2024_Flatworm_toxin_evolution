@@ -1,0 +1,5 @@
+"GO.ID"	"Term"	"Annotated"	"Significant"	"Expected"	"p.value"
+"GO:0005576"	"extracellular region"	412	12	2.09	2.1e-06
+"GO:0005615"	"extracellular space"	214	5	1.08	0.0033
+"GO:0043661"	"peribacteroid membrane"	1	1	0.01	0.0051
+"GO:0043662"	"peribacteroid fluid"	1	1	0.01	0.0051

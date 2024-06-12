@@ -1,0 +1,10 @@
+"GO.ID"	"Term"	"Annotated"	"Significant"	"Expected"	"p.value"
+"GO:0005576"	"extracellular region"	628	40	6.09	4.1e-28
+"GO:0009897"	"external side of plasma membrane"	64	7	0.62	2e-06
+"GO:0071748"	"monomeric IgA immunoglobulin complex"	4	2	0.04	0.00055
+"GO:0071752"	"secretory dimeric IgA immunoglobulin com..."	4	2	0.04	0.00055
+"GO:0071756"	"pentameric IgM immunoglobulin complex"	4	2	0.04	0.00055
+"GO:0005615"	"extracellular space"	290	11	2.81	0.001
+"GO:0031838"	"haptoglobin-hemoglobin complex"	1	1	0.01	0.0097
+"GO:0035580"	"specific granule lumen"	1	1	0.01	0.0097
+"GO:1904724"	"tertiary granule lumen"	1	1	0.01	0.0097

@@ -1,0 +1,4 @@
+"GO.ID"	"Term"	"Annotated"	"Significant"	"Expected"	"p.value"
+"GO:0099106"	"ion channel regulator activity"	20	5	0.1	2.6e-08
+"GO:0090729"	"toxin activity"	18	4	0.09	1.3e-06
+"GO:0005125"	"cytokine activity"	52	4	0.26	1e-04

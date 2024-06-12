@@ -1,0 +1,7 @@
+"GO.ID"	"Term"	"Annotated"	"Significant"	"Expected"	"p.value"
+"GO:0015485"	"cholesterol binding"	9	3	0.26	0.0017
+"GO:0050839"	"cell adhesion molecule binding"	53	8	1.53	0.0043
+"GO:0045296"	"cadherin binding"	14	3	0.4	0.0067
+"GO:0003774"	"cytoskeletal motor activity"	14	3	0.4	0.0067
+"GO:0004336"	"galactosylceramidase activity"	5	2	0.14	0.0078
+"GO:0030246"	"carbohydrate binding"	63	6	1.82	0.0089

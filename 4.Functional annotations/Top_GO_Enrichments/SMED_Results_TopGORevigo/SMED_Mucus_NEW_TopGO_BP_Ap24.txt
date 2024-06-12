@@ -1,0 +1,27 @@
+"GO.ID"	"Term"	"Annotated"	"Significant"	"Expected"	"p.value"
+"GO:0060279"	"positive regulation of ovulation"	5	3	0.14	0.00022
+"GO:0048546"	"digestive tract morphogenesis"	15	4	0.43	7e-04
+"GO:0030241"	"skeletal muscle myosin thick filament as..."	2	2	0.06	0.00083
+"GO:0072499"	"photoreceptor cell axon guidance"	8	3	0.23	0.00118
+"GO:0051495"	"positive regulation of cytoskeleton orga..."	33	5	0.95	0.00227
+"GO:0007413"	"axonal fasciculation"	10	3	0.29	0.00243
+"GO:0008045"	"motor neuron axon guidance"	10	3	0.29	0.00243
+"GO:0042989"	"sequestering of actin monomers"	3	2	0.09	0.00244
+"GO:0007548"	"sex differentiation"	59	8	1.71	0.00419
+"GO:0035158"	"regulation of tube diameter, open trache..."	4	2	0.12	0.00478
+"GO:1904059"	"regulation of locomotor rhythm"	4	2	0.12	0.00478
+"GO:0001746"	"Bolwig's organ morphogenesis"	4	2	0.12	0.00478
+"GO:0035987"	"endodermal cell differentiation"	4	2	0.12	0.00478
+"GO:1904800"	"negative regulation of neuron remodeling"	4	2	0.12	0.00478
+"GO:0048803"	"imaginal disc-derived male genitalia mor..."	4	2	0.12	0.00478
+"GO:0048149"	"behavioral response to ethanol"	13	3	0.38	0.00543
+"GO:0007420"	"brain development"	26	4	0.75	0.00602
+"GO:0006309"	"apoptotic DNA fragmentation"	5	2	0.14	0.00782
+"GO:0007112"	"male meiosis cytokinesis"	5	2	0.14	0.00782
+"GO:0043051"	"regulation of pharyngeal pumping"	15	3	0.43	0.00828
+"GO:0002682"	"regulation of immune system process"	82	7	2.37	0.00878
+"GO:1901136"	"carbohydrate derivative catabolic proces..."	45	5	1.3	0.00891
+"GO:0042327"	"positive regulation of phosphorylation"	63	6	1.82	0.00899
+"GO:0007155"	"cell adhesion"	125	9	3.61	0.00928
+"GO:0001932"	"regulation of protein phosphorylation"	64	6	1.85	0.00969
+"GO:0006959"	"humoral immune response"	16	3	0.46	0.00998

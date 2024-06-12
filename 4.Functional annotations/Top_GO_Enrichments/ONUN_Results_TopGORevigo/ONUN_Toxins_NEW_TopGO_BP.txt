@@ -1,0 +1,30 @@
+"GO.ID"	"Term"	"Annotated"	"Significant"	"Expected"	"p.value"
+"GO:0016339"	"calcium-dependent cell-cell adhesion via..."	50	7	0.49	3.7e-07
+"GO:0035006"	"melanization defense response"	57	7	0.55	9.4e-07
+"GO:0035010"	"encapsulation of foreign target"	58	7	0.56	1.1e-06
+"GO:0031640"	"killing of cells of another organism"	29	5	0.28	6.9e-06
+"GO:0007218"	"neuropeptide signaling pathway"	32	5	0.31	1.2e-05
+"GO:0003094"	"glomerular filtration"	6	3	0.06	1.7e-05
+"GO:0060267"	"positive regulation of respiratory burst"	6	3	0.06	1.7e-05
+"GO:0007586"	"digestion"	40	5	0.39	3.5e-05
+"GO:0016042"	"lipid catabolic process"	99	7	0.96	3.9e-05
+"GO:0045087"	"innate immune response"	181	14	1.76	5.8e-05
+"GO:0019731"	"antibacterial humoral response"	23	4	0.22	6.1e-05
+"GO:0032094"	"response to food"	11	3	0.11	0.00013
+"GO:0002250"	"adaptive immune response"	30	4	0.29	0.00018
+"GO:0050832"	"defense response to fungus"	38	4	0.37	0.00045
+"GO:0050729"	"positive regulation of inflammatory resp..."	26	3	0.25	0.00192
+"GO:0050482"	"arachidonic acid secretion"	8	2	0.08	0.0025
+"GO:1903818"	"positive regulation of voltage-gated pot..."	9	2	0.09	0.00319
+"GO:0050810"	"regulation of steroid biosynthetic proce..."	12	2	0.12	0.00575
+"GO:0051341"	"regulation of oxidoreductase activity"	14	3	0.14	0.00646
+"GO:0048143"	"astrocyte activation"	14	2	0.14	0.00782
+"GO:0001774"	"microglial cell activation"	14	2	0.14	0.00782
+"GO:0032222"	"regulation of synaptic transmission, cho..."	14	2	0.14	0.00782
+"GO:0010942"	"positive regulation of cell death"	85	4	0.83	0.00893
+"GO:1904892"	"regulation of receptor signaling pathway..."	15	2	0.15	0.00897
+"GO:0002281"	"macrophage activation involved in immune..."	15	2	0.15	0.00897
+"GO:0002694"	"regulation of leukocyte activation"	45	3	0.44	0.00919
+"GO:0097168"	"mesenchymal stem cell proliferation"	1	1	0.01	0.00973
+"GO:2000296"	"negative regulation of hydrogen peroxide..."	1	1	0.01	0.00973
+"GO:0051354"	"negative regulation of oxidoreductase ac..."	1	1	0.01	0.00973

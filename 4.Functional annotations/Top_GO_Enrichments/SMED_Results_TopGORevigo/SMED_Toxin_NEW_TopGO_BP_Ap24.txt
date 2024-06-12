@@ -1,0 +1,6 @@
+"GO.ID"	"Term"	"Annotated"	"Significant"	"Expected"	"p.value"
+"GO:0006935"	"chemotaxis"	90	6	0.46	3.1e-06
+"GO:0007218"	"neuropeptide signaling pathway"	30	3	0.15	4e-04
+"GO:1903818"	"positive regulation of voltage-gated pot..."	11	2	0.06	0.0013
+"GO:0032222"	"regulation of synaptic transmission, cho..."	15	2	0.08	0.0024
+"GO:0030431"	"sleep"	24	2	0.12	0.0062
