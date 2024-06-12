@@ -6,7 +6,8 @@
 
 **2. Toxins predictions** Outputs with the different predictions for Obama nungara (ONUN) and Schmidtea mediterranea (SMED). It includes the predictions provided by the two softwares applied (ToxinPred2 and Toxify), a list with the common toxins, the output of SignalP and the final list of secreted toxins. 
 
-**3. Proteomic outputs and metric**
+**3. Proteomic outputs and metrics** Raw data and .pd files can be found here: 
+In this folder, you can find the extracted .txt files including all the master proteins for O.nungara (ONUN) and Schmidtea mediterranea (SMED). Also, you can find the toxins and mucus subsets (with all the columns extracted from proteome discoverer)
 
 **4. Functional annotations** Includes the Blastp and enrichment analyses results and scripts. It also contains the functional annotations for all the proteomes produced with Fantasia. 
 
