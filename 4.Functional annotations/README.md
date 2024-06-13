@@ -6,4 +6,4 @@ Here you can find different Folders that contain:
 
 **2. BLAST results.** The raw data have been directly copied from the web browser. Additionally, two tables are included: one for mucus and another for toxins. These tables contain the manually established groups used for the plots, along with tracking information detailing why proteins were assigned to each category and annotation.
 
-**3. Top_Go_Enrichments:** HEre you can find a mondel of the script used for TopGO enrichments, together with the outputs and the REVIGO outputs (R)
+**3. Top_Go_Enrichments:** Here you can find a mondel of the script used for TopGO enrichments, together with the outputs and the REVIGO outputs (R)
