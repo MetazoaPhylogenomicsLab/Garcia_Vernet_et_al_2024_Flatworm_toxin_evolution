@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HOG HOG:00072393_73</title>
+    <script src="https://d3js.org/d3.v3.js"></script>
+
+    <!-- Bootstrap CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
+          integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"
+            integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"
+            integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
+            crossorigin="anonymous"></script>
+
+    <!-- Roboto font -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+
+    <script src="https://cdn.jsdelivr.net/gh/DessimozLab/iHam@master/build/iHam.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/DessimozLab/iHam@master/build/iHam.css" type="text/css"/>
+
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+
+        #updating {
+            position: absolute;
+            left: 20px;
+            display: none;
+        }
+
+        .alert_remove {
+            margin-bottom: 0px;
+            padding: 4px;
+            display: none;
+        }
+
+        .alert-link {
+            cursor: pointer;
+        }
+
+        #header {
+            margin-left: 20px;
+            margin-bottom: 20px;
+        }
+
+        #header > h3 {
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        #menu-bar > div {
+            display: inline-block;
+        }
+
+        .dropdown-toggle {
+            padding-top: 7px;
+            padding-bottom: 7px;
+        }
+    </style>
+</head>
+<body>
+
+<div id="header">
+    <h3>Hierarchical group HOG:0000474 open at level of <span id="current-node"></span></h3>
+
+    <div id="menu-bar">
+        
+        <div id="gene-tooltips-dropdown" class="dropdown">
+            <button class="btn btn-sm btn-outline-dark dropdown-toggle" type="button" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                Show gene tooltips on
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item active" href="#">Click</a>
+                <a class="dropdown-item" href="#">Mouseover</a>
+            </div>
+        </div>
+
+        <div id="percentage-coverage-selector">
+            <button class="btn btn-sm btn-outline-dark" type="button"
+                    aria-haspopup="true" aria-expanded="false">Remove columns under <input id="set_min_coverage"
+                                                                                           type="number" step="10"
+                                                                                           value="0"
+                                                                                           min="0" max="100">% of
+                species coverage
+            </button>
+        </div>
+    </div>
+</div>
+
+<div id="updating">
+    Updating...
+</div>
+
+<div class="alert alert-info text-center alert_remove"
+     role="alert"
+>
+    Lowly supported hogs have been removed as per settings.
+    <a class="alert-link" id="reset_column_filter">Click here to reset.</a>
+</div>
+
+
+<div style="width: 1500px; min-width: 500px;" id="iham"></div>
+
+<script>
+
+    (function (div) {
+
+        const data = {
+            "tree": '((CGIG2,(LLON1,OFUS1)4)5,(MLAT1,(SSTH1,(MLIG1,((GAPP1,PSIP1)11,(MELI1,(NCOE1,(BSEM1,(BCAN3,(((PFEL1,PTEN1)18,(PMOR1,PVEL1)21)22,(((GIDO1,GIRA1)25,((DRYU1,DUJA1)28,(SPOL1,SMED4)31)32)33,((BKEW1,(MNAN1,((MIGR1,MISC1)38,(MIPL1,MTER1)41)42)43)44,((CBIC1,(KVEN1,RSYL1)48)49,(GQUA1,((IREZ1,LERN1)53,(ONUN3,(OCAR1,OBRA1)57)58)59)60)61)62)63)64)65)66)67)68)69)70)71)72)73;',
+            "orthoxml": `<orthoXML origin="OMA standalone (bottom-up)" originVersion="Jan 2024" version="0.3" xmlns="http://orthoXML.org/2011/"><species name="OBRA1" NCBITaxId="-1"><database name="None" version="None"><genes><gene id="574233" protId="OBRA1_DN385_c0_g1_i1.p1"/></genes></database></species><species name="OCAR1" NCBITaxId="-1"><database name="None" version="None"><genes><gene id="596475" protId="OCAR1_DN5586_c0_g1_i2.p1"/></genes></database></species><species name="ONUN3" NCBITaxId="-1"><database name="None" version="None"><genes><gene id="631177" protId="ONUN3_DN2559_c0_g2_i1.p1"/></genes></database></species><species name="LERN1" NCBITaxId="-1"><database name="None" version="None"><genes><gene id="310669" protId="LERN1_DN21657_c0_g1_i1.p1"/></genes></database></species><species name="IREZ1" NCBITaxId="-1"><database name="None" version="None"><genes><gene id="275138" protId="IREZ1_DN4037_c0_g2_i1.p1"/></genes></database></species><species name="GQUA1" NCBITaxId="-1"><database name="None" version="None"><genes><gene id="254245" protId="GQUA1_DN6171_c0_g1_i1.p1"/></genes></database></species><species name="RSYL1" NCBITaxId="-1"><database name="None" version="None"><genes><gene id="822582" protId="RSYL1_DN10676_c0_g1_i3.p1"/></genes></database></species><species name="KVEN1" NCBITaxId="-1"><database name="None" version="None"><genes><gene id="295817" protId="KVEN1_DN17641_c0_g1_i1.p1"/></genes></database></species><species name="CBIC1" NCBITaxId="-1"><database name="None" version="None"><genes><gene id="85244" protId="CBIC1_DN24412_c0_g1_i3.p1"/></genes></database></species><species name="MISC1" NCBITaxId="-1"><database name="None" version="None"><genes><gene id="422172" protId="MISC1_DN6584_c0_g1_i1.p1"/></genes></database></species><species name="MTER1" NCBITaxId="-1"><database name="None" version="None"><genes><gene id="524082" protId="MTER1_DN1587_c0_g1_i4.p1"/></genes></database></species><species name="MIPL1" NCBITaxId="-1"><database name="None" version="None"><genes><gene id="398616" protId="MIPL1_DN13438_c0_g1_i2.p1"/></genes></database></species><species name="MNAN1" NCBITaxId="-1"><database name="None" version="None"><genes><gene id="511758" protId="MNAN1_DN3936_c0_g1_i7.p1"/></genes></database></species><species name="BKEW1" NCBITaxId="-1"><database name="None" version="None"><genes><gene id="29033" protId="BKEW1_DN928_c0_g1_i2.p1"/></genes></database></species><species name="SMED4" NCBITaxId="-1"><database name="None" version="None"><genes><gene id="826560" protId="SMED4_DN5604_c0_g1_i3.p1"/></genes></database></species><species name="SPOL1" NCBITaxId="-1"><database name="None" version="None"><genes><gene id="878594" protId="SPOL1_DN14418_c0_g1_i1.p1"/></genes></database></species><species name="DUJA1" NCBITaxId="-1"><database name="None" version="None"><genes><gene id="147574" protId="DUJA1_DN9429_c0_g1_i1.p1"/><gene id="156842" protId="DUJA1_DN9429_c0_g2_i1.p1"/></genes></database></species><species name="DRYU1" NCBITaxId="-1"><database name="None" version="None"><genes><gene id="121845" protId="DRYU1_DN1519_c0_g1_i1.p1"/></genes></database></species><species name="GIRA1" NCBITaxId="-1"><database name="None" version="None"><genes><gene id="241155" protId="GIRA1_DN15887_c0_g1_i2.p1"/></genes></database></species><species name="GIDO1" NCBITaxId="-1"><database name="None" version="None"><genes><gene id="216370" protId="GIDO1_DN9069_c0_g2_i3.p1"/></genes></database></species><species name="PMOR1" NCBITaxId="-1"><database name="None" version="None"><genes><gene id="724798" protId="PMOR1_DN42816_c0_g1_i1.p1"/></genes></database></species><species name="PTEN1" NCBITaxId="-1"><database name="None" version="None"><genes><gene id="768936" protId="PTEN1_DN7997_c0_g1_i1.p1"/></genes></database></species><species name="PFEL1" NCBITaxId="-1"><database name="None" version="None"><genes><gene id="666581" protId="PFEL1_DN1988_c0_g1_i1.p1"/></genes></database></species><species name="MLIG1" NCBITaxId="-1"><database name="None" version="None"><genes><gene id="480498" protId="MLIG1_DN0_c0_g26390_i1.p1"/><gene id="487306" protId="MLIG1_DN0_c0_g33198_i1.p1"/><gene id="460531" protId="MLIG1_DN0_c0_g6423_i1.p1"/></genes></database></species><species name="CGIG2" NCBITaxId="-1"><database name="None" version="None"><genes><gene id="103811" protId="CGIG2_DN0_c0_g15646_i1.p1"/><gene id="103812" protId="CGIG2_DN0_c0_g15647_i1.p1"/></genes></database></species><species name="OFUS1" NCBITaxId="-1"><database name="None" version="None"><genes><gene id="607526" protId="OFUS1_DN0_c0_g9416_i1.p1"/></genes></database></species><species name="LLON1" NCBITaxId="-1"><database name="None" version="None"><genes><gene id="332887" protId="LLON1_DN0_c0_g7055_i1.p1"/></genes></database></species><groups><orthologGroup id="HOG:00072393_73"><property name="TaxRange" value="73"/><orthologGroup id="HOG:00072393_5"><property name="TaxRange" value="5"/><paralogGroup><geneRef id="103811"/><geneRef id="103812"/></paralogGroup><orthologGroup id="HOG:00072393_4"><property name="TaxRange" value="4"/><geneRef id="332887"/><geneRef id="607526"/></orthologGroup></orthologGroup><orthologGroup id="HOG:00072393_70"><property name="TaxRange" value="70"/><paralogGroup><geneRef id="480498"/><geneRef id="487306"/><geneRef id="460531"/></paralogGroup><orthologGroup id="HOG:00072393_64"><property name="TaxRange" value="64"/><orthologGroup id="HOG:00072393_63"><property name="TaxRange" value="63"/><orthologGroup id="HOG:00072393_62"><property name="TaxRange" value="62"/><orthologGroup id="HOG:00072393_44"><property name="TaxRange" value="44"/><orthologGroup id="HOG:00072393_43"><property name="TaxRange" value="43"/><geneRef id="511758"/><orthologGroup id="HOG:00072393_42"><property name="TaxRange" value="42"/><geneRef id="422172"/><orthologGroup id="HOG:00072393_41"><property name="TaxRange" value="41"/><geneRef id="398616"/><geneRef id="524082"/></orthologGroup></orthologGroup></orthologGroup><geneRef id="29033"/></orthologGroup><orthologGroup id="HOG:00072393_61"><property name="TaxRange" value="61"/><orthologGroup id="HOG:00072393_60"><property name="TaxRange" value="60"/><geneRef id="254245"/><orthologGroup id="HOG:00072393_59"><property name="TaxRange" value="59"/><orthologGroup id="HOG:00072393_53"><property name="TaxRange" value="53"/><geneRef id="275138"/><geneRef id="310669"/></orthologGroup><orthologGroup id="HOG:00072393_58"><property name="TaxRange" value="58"/><geneRef id="631177"/><orthologGroup id="HOG:00072393_57"><property name="TaxRange" value="57"/><geneRef id="596475"/><geneRef id="574233"/></orthologGroup></orthologGroup></orthologGroup></orthologGroup><orthologGroup id="HOG:00072393_49"><property name="TaxRange" value="49"/><orthologGroup id="HOG:00072393_48"><property name="TaxRange" value="48"/><geneRef id="295817"/><geneRef id="822582"/></orthologGroup><geneRef id="85244"/></orthologGroup></orthologGroup></orthologGroup><orthologGroup id="HOG:00072393_33"><property name="TaxRange" value="33"/><orthologGroup id="HOG:00072393_32"><property name="TaxRange" value="32"/><orthologGroup id="HOG:00072393_28"><property name="TaxRange" value="28"/><paralogGroup><geneRef id="147574"/><geneRef id="156842"/></paralogGroup><geneRef id="121845"/></orthologGroup><orthologGroup id="HOG:00072393_31"><property name="TaxRange" value="31"/><geneRef id="878594"/><geneRef id="826560"/></orthologGroup></orthologGroup><orthologGroup id="HOG:00072393_25"><property name="TaxRange" value="25"/><geneRef id="216370"/><geneRef id="241155"/></orthologGroup></orthologGroup></orthologGroup><orthologGroup id="HOG:00072393_22"><property name="TaxRange" value="22"/><geneRef id="724798"/><orthologGroup id="HOG:00072393_18"><property name="TaxRange" value="18"/><geneRef id="666581"/><geneRef id="768936"/></orthologGroup></orthologGroup></orthologGroup></orthologGroup></orthologGroup></groups></orthoXML>`,
+            "fam_data": [{"taxon": {"species": "LLON1"}, "xrefid": "LLON1_DN0_c0_g7055_i1.p1", "sequence_length": 0, "gc_content": 0, "protid": "LLON1_DN0_c0_g7055_i1.p1", "id": "332887"}, {"taxon": {"species": "OFUS1"}, "xrefid": "OFUS1_DN0_c0_g9416_i1.p1", "sequence_length": 0, "gc_content": 0, "protid": "OFUS1_DN0_c0_g9416_i1.p1", "id": "607526"}, {"taxon": {"species": "CGIG2"}, "xrefid": "CGIG2_DN0_c0_g15646_i1.p1", "sequence_length": 0, "gc_content": 0, "protid": "CGIG2_DN0_c0_g15646_i1.p1", "id": "103811"}, {"taxon": {"species": "CGIG2"}, "xrefid": "CGIG2_DN0_c0_g15647_i1.p1", "sequence_length": 0, "gc_content": 0, "protid": "CGIG2_DN0_c0_g15647_i1.p1", "id": "103812"}, {"taxon": {"species": "MLIG1"}, "xrefid": "MLIG1_DN0_c0_g26390_i1.p1", "sequence_length": 0, "gc_content": 0, "protid": "MLIG1_DN0_c0_g26390_i1.p1", "id": "480498"}, {"taxon": {"species": "MLIG1"}, "xrefid": "MLIG1_DN0_c0_g33198_i1.p1", "sequence_length": 0, "gc_content": 0, "protid": "MLIG1_DN0_c0_g33198_i1.p1", "id": "487306"}, {"taxon": {"species": "MLIG1"}, "xrefid": "MLIG1_DN0_c0_g6423_i1.p1", "sequence_length": 0, "gc_content": 0, "protid": "MLIG1_DN0_c0_g6423_i1.p1", "id": "460531"}, {"taxon": {"species": "PFEL1"}, "xrefid": "PFEL1_DN1988_c0_g1_i1.p1", "sequence_length": 0, "gc_content": 0, "protid": "PFEL1_DN1988_c0_g1_i1.p1", "id": "666581"}, {"taxon": {"species": "PTEN1"}, "xrefid": "PTEN1_DN7997_c0_g1_i1.p1", "sequence_length": 0, "gc_content": 0, "protid": "PTEN1_DN7997_c0_g1_i1.p1", "id": "768936"}, {"taxon": {"species": "PMOR1"}, "xrefid": "PMOR1_DN42816_c0_g1_i1.p1", "sequence_length": 0, "gc_content": 0, "protid": "PMOR1_DN42816_c0_g1_i1.p1", "id": "724798"}, {"taxon": {"species": "GIDO1"}, "xrefid": "GIDO1_DN9069_c0_g2_i3.p1", "sequence_length": 0, "gc_content": 0, "protid": "GIDO1_DN9069_c0_g2_i3.p1", "id": "216370"}, {"taxon": {"species": "GIRA1"}, "xrefid": "GIRA1_DN15887_c0_g1_i2.p1", "sequence_length": 0, "gc_content": 0, "protid": "GIRA1_DN15887_c0_g1_i2.p1", "id": "241155"}, {"taxon": {"species": "DRYU1"}, "xrefid": "DRYU1_DN1519_c0_g1_i1.p1", "sequence_length": 0, "gc_content": 0, "protid": "DRYU1_DN1519_c0_g1_i1.p1", "id": "121845"}, {"taxon": {"species": "DUJA1"}, "xrefid": "DUJA1_DN9429_c0_g1_i1.p1", "sequence_length": 0, "gc_content": 0, "protid": "DUJA1_DN9429_c0_g1_i1.p1", "id": "147574"}, {"taxon": {"species": "DUJA1"}, "xrefid": "DUJA1_DN9429_c0_g2_i1.p1", "sequence_length": 0, "gc_content": 0, "protid": "DUJA1_DN9429_c0_g2_i1.p1", "id": "156842"}, {"taxon": {"species": "SPOL1"}, "xrefid": "SPOL1_DN14418_c0_g1_i1.p1", "sequence_length": 0, "gc_content": 0, "protid": "SPOL1_DN14418_c0_g1_i1.p1", "id": "878594"}, {"taxon": {"species": "SMED4"}, "xrefid": "SMED4_DN5604_c0_g1_i3.p1", "sequence_length": 0, "gc_content": 0, "protid": "SMED4_DN5604_c0_g1_i3.p1", "id": "826560"}, {"taxon": {"species": "BKEW1"}, "xrefid": "BKEW1_DN928_c0_g1_i2.p1", "sequence_length": 0, "gc_content": 0, "protid": "BKEW1_DN928_c0_g1_i2.p1", "id": "29033"}, {"taxon": {"species": "MNAN1"}, "xrefid": "MNAN1_DN3936_c0_g1_i7.p1", "sequence_length": 0, "gc_content": 0, "protid": "MNAN1_DN3936_c0_g1_i7.p1", "id": "511758"}, {"taxon": {"species": "MIPL1"}, "xrefid": "MIPL1_DN13438_c0_g1_i2.p1", "sequence_length": 0, "gc_content": 0, "protid": "MIPL1_DN13438_c0_g1_i2.p1", "id": "398616"}, {"taxon": {"species": "MTER1"}, "xrefid": "MTER1_DN1587_c0_g1_i4.p1", "sequence_length": 0, "gc_content": 0, "protid": "MTER1_DN1587_c0_g1_i4.p1", "id": "524082"}, {"taxon": {"species": "MISC1"}, "xrefid": "MISC1_DN6584_c0_g1_i1.p1", "sequence_length": 0, "gc_content": 0, "protid": "MISC1_DN6584_c0_g1_i1.p1", "id": "422172"}, {"taxon": {"species": "CBIC1"}, "xrefid": "CBIC1_DN24412_c0_g1_i3.p1", "sequence_length": 0, "gc_content": 0, "protid": "CBIC1_DN24412_c0_g1_i3.p1", "id": "85244"}, {"taxon": {"species": "KVEN1"}, "xrefid": "KVEN1_DN17641_c0_g1_i1.p1", "sequence_length": 0, "gc_content": 0, "protid": "KVEN1_DN17641_c0_g1_i1.p1", "id": "295817"}, {"taxon": {"species": "RSYL1"}, "xrefid": "RSYL1_DN10676_c0_g1_i3.p1", "sequence_length": 0, "gc_content": 0, "protid": "RSYL1_DN10676_c0_g1_i3.p1", "id": "822582"}, {"taxon": {"species": "GQUA1"}, "xrefid": "GQUA1_DN6171_c0_g1_i1.p1", "sequence_length": 0, "gc_content": 0, "protid": "GQUA1_DN6171_c0_g1_i1.p1", "id": "254245"}, {"taxon": {"species": "IREZ1"}, "xrefid": "IREZ1_DN4037_c0_g2_i1.p1", "sequence_length": 0, "gc_content": 0, "protid": "IREZ1_DN4037_c0_g2_i1.p1", "id": "275138"}, {"taxon": {"species": "LERN1"}, "xrefid": "LERN1_DN21657_c0_g1_i1.p1", "sequence_length": 0, "gc_content": 0, "protid": "LERN1_DN21657_c0_g1_i1.p1", "id": "310669"}, {"taxon": {"species": "ONUN3"}, "xrefid": "ONUN3_DN2559_c0_g2_i1.p1", "sequence_length": 0, "gc_content": 0, "protid": "ONUN3_DN2559_c0_g2_i1.p1", "id": "631177"}, {"taxon": {"species": "OCAR1"}, "xrefid": "OCAR1_DN5586_c0_g1_i2.p1", "sequence_length": 0, "gc_content": 0, "protid": "OCAR1_DN5586_c0_g1_i2.p1", "id": "596475"}, {"taxon": {"species": "OBRA1"}, "xrefid": "OBRA1_DN385_c0_g1_i1.p1", "sequence_length": 0, "gc_content": 0, "protid": "OBRA1_DN385_c0_g1_i1.p1", "id": "574233"}]
+        }
+
+
+        var theme = iHam()
+                .on('node_selected', function (node) {
+                    d3.select('#current-node')
+                            .text(node.node_name());
+                })
+                .orthoxml(data.orthoxml)
+                .show_oma_link(false)
+                .newick(data.tree)
+                .fam_data(data.fam_data)
+                .tree_width(330)
+                .board_width(530)
+                .query_gene({id: 3965})
+                .on("updating", function () {
+                    d3.select("#updating")
+                            .style("display", 'block');
+                })
+                .on("updated", function () {
+                    d3.select("#updating")
+                            .style("display", "none");
+                })
+                .on("hogs_removed", function (what) {
+                    if (what.length) {
+                        d3.select(".alert_remove")
+                                .style("display", "block")
+                    } else {
+                        d3.select(".alert_remove")
+                                .style("display", "none");
+                    }
+                });
+
+        theme(div);
+
+        // Update the color schemas
+
+        // Update event for gene tooltips
+        d3.select("#gene-tooltips-dropdown")
+                .selectAll("a")
+                .on("click", function () {
+                    // Manage state of menu itself
+                    d3.select(this.parentNode).selectAll("a").classed("active", false);
+                    d3.select(this)
+                            .classed("active", true);
+
+                    if (d3.select(this).text() === "Click") {
+                        theme.gene_tooltips_on("click");
+                    }
+                    if (d3.select(this).text() === "Mouseover") {
+                        theme.gene_tooltips_on("mouseover");
+                    }
+                });
+
+        // Set minimum species coverage
+        d3.select("#percentage-coverage-selector").select("input")
+                .on("input", function () {
+                    theme.coverage_threshold(d3.select(this).property("value"));
+                });
+
+        // Reset the coverage
+        d3.select("#reset_column_filter")
+                .on("click", function () {
+                    d3.select("#percentage-coverage-selector").select("input").property("value", 0);
+                    theme.coverage_threshold(0);
+                })
+    })(document.getElementById('iham'));
+
+
+</script>
+</body>
+</html>

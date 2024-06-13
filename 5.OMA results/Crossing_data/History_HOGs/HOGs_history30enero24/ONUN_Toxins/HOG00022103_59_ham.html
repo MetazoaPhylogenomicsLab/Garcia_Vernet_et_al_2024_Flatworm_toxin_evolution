@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HOG HOG:00022103_59</title>
+    <script src="https://d3js.org/d3.v3.js"></script>
+
+    <!-- Bootstrap CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
+          integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"
+            integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"
+            integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
+            crossorigin="anonymous"></script>
+
+    <!-- Roboto font -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+
+    <script src="https://cdn.jsdelivr.net/gh/DessimozLab/iHam@master/build/iHam.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/DessimozLab/iHam@master/build/iHam.css" type="text/css"/>
+
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+
+        #updating {
+            position: absolute;
+            left: 20px;
+            display: none;
+        }
+
+        .alert_remove {
+            margin-bottom: 0px;
+            padding: 4px;
+            display: none;
+        }
+
+        .alert-link {
+            cursor: pointer;
+        }
+
+        #header {
+            margin-left: 20px;
+            margin-bottom: 20px;
+        }
+
+        #header > h3 {
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        #menu-bar > div {
+            display: inline-block;
+        }
+
+        .dropdown-toggle {
+            padding-top: 7px;
+            padding-bottom: 7px;
+        }
+    </style>
+</head>
+<body>
+
+<div id="header">
+    <h3>Hierarchical group HOG:0000474 open at level of <span id="current-node"></span></h3>
+
+    <div id="menu-bar">
+        
+        <div id="gene-tooltips-dropdown" class="dropdown">
+            <button class="btn btn-sm btn-outline-dark dropdown-toggle" type="button" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                Show gene tooltips on
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item active" href="#">Click</a>
+                <a class="dropdown-item" href="#">Mouseover</a>
+            </div>
+        </div>
+
+        <div id="percentage-coverage-selector">
+            <button class="btn btn-sm btn-outline-dark" type="button"
+                    aria-haspopup="true" aria-expanded="false">Remove columns under <input id="set_min_coverage"
+                                                                                           type="number" step="10"
+                                                                                           value="0"
+                                                                                           min="0" max="100">% of
+                species coverage
+            </button>
+        </div>
+    </div>
+</div>
+
+<div id="updating">
+    Updating...
+</div>
+
+<div class="alert alert-info text-center alert_remove"
+     role="alert"
+>
+    Lowly supported hogs have been removed as per settings.
+    <a class="alert-link" id="reset_column_filter">Click here to reset.</a>
+</div>
+
+
+<div style="width: 1500px; min-width: 500px;" id="iham"></div>
+
+<script>
+
+    (function (div) {
+
+        const data = {
+            "tree": '((IREZ1,LERN1)53,(ONUN3,(OCAR1,OBRA1)57)58)59;',
+            "orthoxml": `<orthoXML origin="OMA standalone (bottom-up)" originVersion="Jan 2024" version="0.3" xmlns="http://orthoXML.org/2011/"><species name="ONUN3" NCBITaxId="-1"><database name="None" version="None"><genes><gene id="627586" protId="ONUN3_DN16192_c0_g2_i1.p1"/><gene id="647066" protId="ONUN3_DN348_c0_g1_i11.p1"/><gene id="640028" protId="ONUN3_DN158_c0_g3_i5.p1"/></genes></database></species><species name="OBRA1" NCBITaxId="-1"><database name="None" version="None"><genes><gene id="566486" protId="OBRA1_DN510_c1_g1_i10.p1"/><gene id="578342" protId="OBRA1_DN37562_c0_g1_i1.p1"/><gene id="571716" protId="OBRA1_DN19013_c0_g1_i1.p1"/><gene id="572492" protId="OBRA1_DN963_c0_g1_i1.p1"/></genes></database></species><species name="OCAR1" NCBITaxId="-1"><database name="None" version="None"><genes><gene id="580216" protId="OCAR1_DN1591_c1_g1_i1.p1"/><gene id="582488" protId="OCAR1_DN795_c0_g1_i4.p1"/><gene id="581902" protId="OCAR1_DN1591_c0_g1_i1.p1"/><gene id="597579" protId="OCAR1_DN32875_c0_g1_i1.p1"/></genes></database></species><species name="LERN1" NCBITaxId="-1"><database name="None" version="None"><genes><gene id="313587" protId="LERN1_DN44296_c0_g1_i1.p1"/><gene id="315132" protId="LERN1_DN1360_c0_g1_i1.p1"/><gene id="308126" protId="LERN1_DN109_c0_g1_i2.p1"/></genes></database></species><species name="IREZ1" NCBITaxId="-1"><database name="None" version="None"><genes><gene id="279286" protId="IREZ1_DN1146_c0_g1_i3.p1"/><gene id="281010" protId="IREZ1_DN3014_c0_g1_i1.p2"/><gene id="282093" protId="IREZ1_DN7866_c0_g2_i2.p1"/><gene id="285268" protId="IREZ1_DN7866_c0_g1_i1.p1"/></genes></database></species><groups><orthologGroup id="HOG:00022103_59"><property name="TaxRange" value="59"/><paralogGroup><orthologGroup id="HOG:00022103.1a_53"><property name="TaxRange" value="53"/><geneRef id="279286"/><geneRef id="313587"/></orthologGroup><orthologGroup id="HOG:00022103.1b_53"><property name="TaxRange" value="53"/><geneRef id="281010"/><geneRef id="315132"/></orthologGroup><orthologGroup id="HOG:00022103.1c_53"><property name="TaxRange" value="53"/><paralogGroup><geneRef id="282093"/><geneRef id="285268"/></paralogGroup><geneRef id="308126"/></orthologGroup></paralogGroup><paralogGroup><orthologGroup id="HOG:00022103.2a_58"><property name="TaxRange" value="58"/><paralogGroup><geneRef id="627586"/><geneRef id="647066"/></paralogGroup><orthologGroup id="HOG:00022103.2a_57"><property name="TaxRange" value="57"/><paralogGroup><geneRef id="580216"/><geneRef id="582488"/><geneRef id="581902"/><geneRef id="597579"/></paralogGroup><paralogGroup><geneRef id="566486"/><geneRef id="578342"/><geneRef id="571716"/><geneRef id="572492"/></paralogGroup></orthologGroup></orthologGroup><geneRef id="640028"/></paralogGroup></orthologGroup></groups></orthoXML>`,
+            "fam_data": [{"taxon": {"species": "IREZ1"}, "xrefid": "IREZ1_DN1146_c0_g1_i3.p1", "sequence_length": 0, "gc_content": 0, "protid": "IREZ1_DN1146_c0_g1_i3.p1", "id": "279286"}, {"taxon": {"species": "LERN1"}, "xrefid": "LERN1_DN44296_c0_g1_i1.p1", "sequence_length": 0, "gc_content": 0, "protid": "LERN1_DN44296_c0_g1_i1.p1", "id": "313587"}, {"taxon": {"species": "IREZ1"}, "xrefid": "IREZ1_DN3014_c0_g1_i1.p2", "sequence_length": 0, "gc_content": 0, "protid": "IREZ1_DN3014_c0_g1_i1.p2", "id": "281010"}, {"taxon": {"species": "LERN1"}, "xrefid": "LERN1_DN1360_c0_g1_i1.p1", "sequence_length": 0, "gc_content": 0, "protid": "LERN1_DN1360_c0_g1_i1.p1", "id": "315132"}, {"taxon": {"species": "LERN1"}, "xrefid": "LERN1_DN109_c0_g1_i2.p1", "sequence_length": 0, "gc_content": 0, "protid": "LERN1_DN109_c0_g1_i2.p1", "id": "308126"}, {"taxon": {"species": "IREZ1"}, "xrefid": "IREZ1_DN7866_c0_g2_i2.p1", "sequence_length": 0, "gc_content": 0, "protid": "IREZ1_DN7866_c0_g2_i2.p1", "id": "282093"}, {"taxon": {"species": "IREZ1"}, "xrefid": "IREZ1_DN7866_c0_g1_i1.p1", "sequence_length": 0, "gc_content": 0, "protid": "IREZ1_DN7866_c0_g1_i1.p1", "id": "285268"}, {"taxon": {"species": "OCAR1"}, "xrefid": "OCAR1_DN1591_c1_g1_i1.p1", "sequence_length": 0, "gc_content": 0, "protid": "OCAR1_DN1591_c1_g1_i1.p1", "id": "580216"}, {"taxon": {"species": "OCAR1"}, "xrefid": "OCAR1_DN795_c0_g1_i4.p1", "sequence_length": 0, "gc_content": 0, "protid": "OCAR1_DN795_c0_g1_i4.p1", "id": "582488"}, {"taxon": {"species": "OCAR1"}, "xrefid": "OCAR1_DN1591_c0_g1_i1.p1", "sequence_length": 0, "gc_content": 0, "protid": "OCAR1_DN1591_c0_g1_i1.p1", "id": "581902"}, {"taxon": {"species": "OCAR1"}, "xrefid": "OCAR1_DN32875_c0_g1_i1.p1", "sequence_length": 0, "gc_content": 0, "protid": "OCAR1_DN32875_c0_g1_i1.p1", "id": "597579"}, {"taxon": {"species": "OBRA1"}, "xrefid": "OBRA1_DN510_c1_g1_i10.p1", "sequence_length": 0, "gc_content": 0, "protid": "OBRA1_DN510_c1_g1_i10.p1", "id": "566486"}, {"taxon": {"species": "OBRA1"}, "xrefid": "OBRA1_DN37562_c0_g1_i1.p1", "sequence_length": 0, "gc_content": 0, "protid": "OBRA1_DN37562_c0_g1_i1.p1", "id": "578342"}, {"taxon": {"species": "OBRA1"}, "xrefid": "OBRA1_DN19013_c0_g1_i1.p1", "sequence_length": 0, "gc_content": 0, "protid": "OBRA1_DN19013_c0_g1_i1.p1", "id": "571716"}, {"taxon": {"species": "OBRA1"}, "xrefid": "OBRA1_DN963_c0_g1_i1.p1", "sequence_length": 0, "gc_content": 0, "protid": "OBRA1_DN963_c0_g1_i1.p1", "id": "572492"}, {"taxon": {"species": "ONUN3"}, "xrefid": "ONUN3_DN16192_c0_g2_i1.p1", "sequence_length": 0, "gc_content": 0, "protid": "ONUN3_DN16192_c0_g2_i1.p1", "id": "627586"}, {"taxon": {"species": "ONUN3"}, "xrefid": "ONUN3_DN348_c0_g1_i11.p1", "sequence_length": 0, "gc_content": 0, "protid": "ONUN3_DN348_c0_g1_i11.p1", "id": "647066"}, {"taxon": {"species": "ONUN3"}, "xrefid": "ONUN3_DN158_c0_g3_i5.p1", "sequence_length": 0, "gc_content": 0, "protid": "ONUN3_DN158_c0_g3_i5.p1", "id": "640028"}]
+        }
+
+
+        var theme = iHam()
+                .on('node_selected', function (node) {
+                    d3.select('#current-node')
+                            .text(node.node_name());
+                })
+                .orthoxml(data.orthoxml)
+                .show_oma_link(false)
+                .newick(data.tree)
+                .fam_data(data.fam_data)
+                .tree_width(330)
+                .board_width(530)
+                .query_gene({id: 3965})
+                .on("updating", function () {
+                    d3.select("#updating")
+                            .style("display", 'block');
+                })
+                .on("updated", function () {
+                    d3.select("#updating")
+                            .style("display", "none");
+                })
+                .on("hogs_removed", function (what) {
+                    if (what.length) {
+                        d3.select(".alert_remove")
+                                .style("display", "block")
+                    } else {
+                        d3.select(".alert_remove")
+                                .style("display", "none");
+                    }
+                });
+
+        theme(div);
+
+        // Update the color schemas
+
+        // Update event for gene tooltips
+        d3.select("#gene-tooltips-dropdown")
+                .selectAll("a")
+                .on("click", function () {
+                    // Manage state of menu itself
+                    d3.select(this.parentNode).selectAll("a").classed("active", false);
+                    d3.select(this)
+                            .classed("active", true);
+
+                    if (d3.select(this).text() === "Click") {
+                        theme.gene_tooltips_on("click");
+                    }
+                    if (d3.select(this).text() === "Mouseover") {
+                        theme.gene_tooltips_on("mouseover");
+                    }
+                });
+
+        // Set minimum species coverage
+        d3.select("#percentage-coverage-selector").select("input")
+                .on("input", function () {
+                    theme.coverage_threshold(d3.select(this).property("value"));
+                });
+
+        // Reset the coverage
+        d3.select("#reset_column_filter")
+                .on("click", function () {
+                    d3.select("#percentage-coverage-selector").select("input").property("value", 0);
+                    theme.coverage_threshold(0);
+                })
+    })(document.getElementById('iham'));
+
+
+</script>
+</body>
+</html>
