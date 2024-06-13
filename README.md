@@ -9,6 +9,6 @@
 **3. Proteomic outputs and metrics** Raw data and .pd files can be found here: 
 In this folder, you can find the extracted .txt files including all the master proteins for O.nungara (ONUN) and Schmidtea mediterranea (SMED). Also, you can find the toxins and mucus subsets (with all the columns extracted from proteome discoverer)
 
-**4. Functional annotations** Includes the Blastp and enrichment analyses results and scripts. It also contains the functional annotations for all the proteomes produced with Fantasia. 
+**4. Functional annotations** Includes the Blast and enrichment analyses results and scripts. It also contains the functional annotations for all the proteomes produced with Fantasia. 
 
 Code and data associated to the manuscript García-Vernet et al. 2024. Flatworm toxin evolution
