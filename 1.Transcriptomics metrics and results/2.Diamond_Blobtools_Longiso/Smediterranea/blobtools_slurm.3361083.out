@@ -1,0 +1,3 @@
+slurmstepd: info: Setting TMPDIR to /scratch/3361083. Previous errors about TMPDIR can be discarded
+Loading sequences from ../3.Transdecoder/SMED3_transdecoder.cds
+Loading parsed taxdump

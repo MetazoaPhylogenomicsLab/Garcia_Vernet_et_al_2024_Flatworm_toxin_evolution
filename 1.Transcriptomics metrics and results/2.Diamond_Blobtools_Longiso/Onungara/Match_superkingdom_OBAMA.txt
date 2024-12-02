@@ -1,0 +1,7 @@
+"V1" "V2"
+"1" "no-hit" "41140"
+"2" "Eukaryota" "53309"
+"3" "undef" "1264"
+"4" "Bacteria" "308"
+"5" "Viruses" "84"
+"6" "Archaea" "34"
