@@ -1,0 +1,11 @@
+{
+    "salmon_version": "1.5.2",
+    "index": "/mnt/netapp2/Store_csbyeneb/Raquel/Toxins/DGE/Obama_nungara/6.Salmon/../2.Trinity/ONUN2.mod.trinity.fasta.salmon.idx",
+    "libType": "ISF",
+    "mates1": "/mnt/netapp2/Store_csbyeneb/Raquel/Toxins/DGE/Obama_nungara/1.Preprocessing/trimmed_data/Paired_trimmed/ONUN_HEAD1_trimmed_1_paired.fastq.gz",
+    "mates2": "/mnt/netapp2/Store_csbyeneb/Raquel/Toxins/DGE/Obama_nungara/1.Preprocessing/trimmed_data/Paired_trimmed/ONUN_HEAD1_trimmed_2_paired.fastq.gz",
+    "output": "ONUN_HEAD1",
+    "threads": "20",
+    "validateMappings": [],
+    "auxDir": "aux_info"
+}

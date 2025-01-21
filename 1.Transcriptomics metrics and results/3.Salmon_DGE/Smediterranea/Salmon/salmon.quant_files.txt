@@ -1,0 +1,9 @@
+./SMED_BODY1/quant.sf
+./SMED_BODY2/quant.sf
+./SMED_BODY3/quant.sf
+./SMED_HEAD1/quant.sf
+./SMED_HEAD2/quant.sf
+./SMED_HEAD3/quant.sf
+./SMED_PHARYNX1/quant.sf
+./SMED_PHARYNX2/quant.sf
+./SMED_PHARYNX3/quant.sf

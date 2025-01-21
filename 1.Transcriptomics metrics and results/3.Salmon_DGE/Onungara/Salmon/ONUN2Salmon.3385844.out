@@ -1,0 +1,36 @@
+slurmstepd: info: Setting TMPDIR to /scratch/3385844. Previous errors about TMPDIR can be discarded
+Threads = 20
+Vertex length = 31
+Hash functions = 5
+Filter size = 2147483648
+Capacity = 2
+Files: 
+/mnt/netapp2/Store_csbyeneb/Raquel/Toxins/DGE/Obama_nungara/6.Salmon/../2.Trinity/ONUN2.mod.trinity.fasta.salmon.idx/ref_k31_fixed.fa
+--------------------------------------------------------------------------------
+Round 0, 0:2147483648
+Pass	Filling	Filtering
+1	4	6	
+2	4	1
+True junctions count = 861374
+False junctions count = 1601872
+Hash table size = 2463246
+Candidate marks count = 8358138
+--------------------------------------------------------------------------------
+Reallocating bifurcations time: 0
+True marks count: 5271967
+Edges construction time: 4
+--------------------------------------------------------------------------------
+Distinct junctions = 861374
+
+for info, total work write each  : 2.331    total work inram from level 3 : 4.322  total work raw : 25.000 
+Bitarray       570807360  bits (100.00 %)   (array + ranks )
+final hash             0  bits (0.00 %) (nb in final hash 0)
+./ONUN_BODY1/quant.sf
+./ONUN_BODY2/quant.sf
+./ONUN_BODY3/quant.sf
+./ONUN_HEAD1/quant.sf
+./ONUN_HEAD2/quant.sf
+./ONUN_HEAD3/quant.sf
+./ONUN_PHARYNX1/quant.sf
+./ONUN_PHARYNX2/quant.sf
+./ONUN_PHARYNX3/quant.sf

@@ -1,0 +1,22 @@
+{
+    "read_files": "[ /mnt/netapp2/Store_csbyeneb/Raquel/Toxins/DGE/Schmidtea_med/1.Preprocessing/trimmed_data/Paired_trimmed/SMED_BODY1_trimmed_1_paired.fastq.gz, /mnt/netapp2/Store_csbyeneb/Raquel/Toxins/DGE/Schmidtea_med/1.Preprocessing/trimmed_data/Paired_trimmed/SMED_BODY1_trimmed_2_paired.fastq.gz]",
+    "expected_format": "ISF",
+    "compatible_fragment_ratio": 1.0,
+    "num_compatible_fragments": 18683062,
+    "num_assigned_fragments": 18683062,
+    "num_frags_with_concordant_consistent_mappings": 17936738,
+    "num_frags_with_inconsistent_or_orphan_mappings": 890802,
+    "strand_mapping_bias": 1.0,
+    "MSF": 0,
+    "OSF": 0,
+    "ISF": 17936738,
+    "MSR": 0,
+    "OSR": 0,
+    "ISR": 0,
+    "SF": 454899,
+    "SR": 435903,
+    "MU": 0,
+    "OU": 0,
+    "IU": 0,
+    "U": 0
+}

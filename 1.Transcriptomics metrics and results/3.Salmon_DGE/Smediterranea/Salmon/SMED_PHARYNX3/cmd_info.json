@@ -1,0 +1,11 @@
+{
+    "salmon_version": "1.5.2",
+    "index": "/mnt/netapp2/Store_csbyeneb/Raquel/Toxins/DGE/Schmidtea_med/6.Salmon/../2.Trinity/SMED3.mod.trinity.fasta.salmon.idx",
+    "libType": "ISF",
+    "mates1": "/mnt/netapp2/Store_csbyeneb/Raquel/Toxins/DGE/Schmidtea_med/1.Preprocessing/trimmed_data/Paired_trimmed/SMED_PHARYNX3_trimmed_1_paired.fastq.gz",
+    "mates2": "/mnt/netapp2/Store_csbyeneb/Raquel/Toxins/DGE/Schmidtea_med/1.Preprocessing/trimmed_data/Paired_trimmed/SMED_PHARYNX3_trimmed_2_paired.fastq.gz",
+    "output": "SMED_PHARYNX3",
+    "threads": "20",
+    "validateMappings": [],
+    "auxDir": "aux_info"
+}

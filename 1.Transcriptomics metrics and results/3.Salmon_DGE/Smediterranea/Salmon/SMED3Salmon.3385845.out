@@ -1,0 +1,36 @@
+slurmstepd: info: Setting TMPDIR to /scratch/3385845. Previous errors about TMPDIR can be discarded
+Threads = 20
+Vertex length = 31
+Hash functions = 5
+Filter size = 4294967296
+Capacity = 2
+Files: 
+/mnt/netapp2/Store_csbyeneb/Raquel/Toxins/DGE/Schmidtea_med/6.Salmon/../2.Trinity/SMED3.mod.trinity.fasta.salmon.idx/ref_k31_fixed.fa
+--------------------------------------------------------------------------------
+Round 0, 0:4294967296
+Pass	Filling	Filtering
+1	7	8	
+2	5	1
+True junctions count = 1009685
+False junctions count = 357998
+Hash table size = 1367683
+Candidate marks count = 6272263
+--------------------------------------------------------------------------------
+Reallocating bifurcations time: 0
+True marks count: 6129840
+Edges construction time: 6
+--------------------------------------------------------------------------------
+Distinct junctions = 1009685
+
+for info, total work write each  : 2.331    total work inram from level 3 : 4.322  total work raw : 25.000 
+Bitarray       702866688  bits (100.00 %)   (array + ranks )
+final hash             0  bits (0.00 %) (nb in final hash 0)
+./SMED_BODY1/quant.sf
+./SMED_BODY2/quant.sf
+./SMED_BODY3/quant.sf
+./SMED_HEAD1/quant.sf
+./SMED_HEAD2/quant.sf
+./SMED_HEAD3/quant.sf
+./SMED_PHARYNX1/quant.sf
+./SMED_PHARYNX2/quant.sf
+./SMED_PHARYNX3/quant.sf

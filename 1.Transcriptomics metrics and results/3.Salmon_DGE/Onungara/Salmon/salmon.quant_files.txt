@@ -1,0 +1,9 @@
+./ONUN_BODY1/quant.sf
+./ONUN_BODY2/quant.sf
+./ONUN_BODY3/quant.sf
+./ONUN_HEAD1/quant.sf
+./ONUN_HEAD2/quant.sf
+./ONUN_HEAD3/quant.sf
+./ONUN_PHARYNX1/quant.sf
+./ONUN_PHARYNX2/quant.sf
+./ONUN_PHARYNX3/quant.sf
