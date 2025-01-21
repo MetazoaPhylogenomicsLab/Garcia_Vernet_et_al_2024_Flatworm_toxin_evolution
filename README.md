@@ -13,4 +13,6 @@ In this folder, you can find the extracted .txt files including all the master p
 
 **5. OMA** This folder contains results showing the evolution of toxins and mucus across the Platyhelminthes phylum. Inside, you will find the OrthoXML file and a folder with specific outputs for the mucus and toxins HOGs.
 
+**Figures Supplemental** Figure S1, S2, S3 and S4
+
 Code and data associated to the manuscript García-Vernet et al. 2024. Flatworm toxin evolution
