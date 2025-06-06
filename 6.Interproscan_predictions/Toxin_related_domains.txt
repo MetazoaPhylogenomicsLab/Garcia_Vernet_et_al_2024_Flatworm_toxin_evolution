@@ -1,0 +1,21 @@
+CAP
+CAP domain
+CAP superfamily
+CAP_euk
+Cysteine-rich secretory protein family
+CRISP family signature 1.
+SCP_3
+Snake toxin-like
+Snake toxin-like superfamily
+Allergen V5/Tpx-1-related, conserved site
+Venom allergen 5-like
+Venom allergen 5 signature
+Phospholipase A2
+Phospholipase A2 domain
+Phospholipase A2 domain superfamily
+Phospholipase A2 histidine active site
+Phospholipase A2, PLA2
+Phospholipase A2, histidine active site
+PHOSPHOLIPASE A2 FAMILY MEMBER
+PR-1-like
+PA-fin
